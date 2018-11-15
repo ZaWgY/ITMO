@@ -1,8 +1,6 @@
 #! /bin/ksh
 
-#if ls "$1" > /dev/null
-#then
-        gfind -L . -maxdepth 1 -samefile "$1" -xtype l | xargs ls -ct
-#fi
+find -L . -maxdepth 0 -samefile "$1" -type l | xargs ls -clt | | nawk '{print "status modification time = ",$8 , "    name = ",$9}'
+
 
 
